@@ -9,14 +9,14 @@ def search_number(number, list):
         right = len(list) - 1
         step_counter = 0
         while left <= right:
-            middle = int((left + right)/2)
+            middle = (left + right)//2
             step_counter += 1
             print(f'Searching for: {number}, left: {left}, right: {right}, middle: {middle}, step: {step_counter}')
-            if number == middle or number == right or number == left:
+            if number == middle:
                 return f'Number of steps : {step_counter}'
             elif number < middle:
                 right = middle + 1
             elif number > middle:
-                left = middle - 1
+                left = middle + 1
 
-print(search_number(50, list_of_nums))
+print(search_number(101, list_of_nums))
